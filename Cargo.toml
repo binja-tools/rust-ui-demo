@@ -1,0 +1,39 @@
+[package]
+name = "binja_sidebar_demo"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[patch.crates-io.cxx-qt]
+git = "https://github.com/binja-tools/cxx-qt"
+branch = "custom"
+
+[patch.crates-io.cxx-qt-lib]
+git = "https://github.com/binja-tools/cxx-qt"
+branch = "custom"
+
+[patch.crates-io.cxx-qt-build]
+git = "https://github.com/binja-tools/cxx-qt"
+branch = "custom"
+
+[dependencies]
+log = "0.4.20"
+cxx = "1.0.115"
+cxx-qt = "0.6.0"
+cxx-qt-lib = "0.6.0"
+
+[dependencies.binaryninja]
+git = "https://github.com/Vector35/binaryninja-api.git"
+features = ["rayon"]
+branch = "dev"
+
+[dependencies.binaryninjacore-sys]
+git = "https://github.com/Vector35/binaryninja-api.git"
+branch = "dev"
+
+[build-dependencies]
+cxx-qt-build = "0.6.0"
+cc = "1.0.83"
+cargo_metadata = "0.18.1"
